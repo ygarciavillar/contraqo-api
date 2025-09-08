@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16
+    container_name: contraqo_db
+    restart: always
+    environment:
+      POSTGRES_DB: contraqo
+      POSTGRES_PASSWORD: root1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+volumes:
+  db_data:
