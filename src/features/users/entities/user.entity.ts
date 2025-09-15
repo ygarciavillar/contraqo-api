@@ -1,7 +1,7 @@
 import { Column, Entity, Index, OneToMany } from 'typeorm';
-import { BaseEntity } from '../../common/entities/BaseEntity';
+import { BaseEntity } from '../../../shared/entities/BaseEntity';
 import { UserCredential } from './user-credential.entity';
-import { ProviderType, SubscriptionStatus } from '../../common/types/auth.types';
+import { ProviderType, SubscriptionStatus } from '../../../shared/types/auth.types';
 
 @Entity('users')
 @Index(['email'])

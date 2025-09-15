@@ -1,9 +1,12 @@
-import { BaseEntity } from '../../common/entities/BaseEntity';
-import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
+import { BaseEntity } from '../../../shared/entities/BaseEntity';
+import { Column, Entity, Index, JoinColumn, ManyToOne } from 'typeorm';
 import { User } from './user.entity';
-import { ProviderType } from '../../common/types/auth.types';
+import { ProviderType } from '../../../shared/types/auth.types';
 
 @Entity('user_credentials')
+@Index(['userId', 'providerType'], { unique: true }) // One credential per provider per user
+@Index(['providerType', 'providerId']) // For fast provider lookups
+@Index(['userId', 'isPrimary']) // For finding primary credential
 export class UserCredential extends BaseEntity {
   @Column({ name: 'user_id' })
   userId: string;

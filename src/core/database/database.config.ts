@@ -5,6 +5,8 @@ export default registerAs('database', (): TypeOrmModuleOptions => {
   const isDevelopment = process.env.NODE_ENV === 'development';
   const isProduction = process.env.NODE_ENV === 'production';
   const isTest = process.env.NODE_ENV === 'test';
+
+  console.log('Postgres url is', process.env.POSTGRES_URL);
   return {
     type: 'postgres',
     url: process.env.POSTGRES_URL,

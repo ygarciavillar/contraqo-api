@@ -1,24 +1,26 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ClientsModule } from './clients/clients.module';
-import { UsersModule } from './users/users.module';
-import { QuotesModule } from './quotes/quotes.module';
+import { ClientsModule } from './features/clients/clients.module';
+import { UsersModule } from './features/users/users.module';
+import { QuotesModule } from './features/quotes/quotes.module';
 import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import databaseConfig from './config/database.config';
+
+import { DatabaseModule } from './core/database/database.module';
+import { SeederModule } from './tools/seeder/seeder.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       expandVariables: true,
       isGlobal: true,
-      envFilePath: [`.env.${process.env.NODE_ENV}`],
+      envFilePath: [`.env.${process.env.NODE_ENV || 'development'}`],
     }),
-    TypeOrmModule.forRootAsync(databaseConfig.asProvider()),
     ClientsModule,
     UsersModule,
     QuotesModule,
+    DatabaseModule,
+    SeederModule,
   ],
   controllers: [AppController],
   providers: [AppService],

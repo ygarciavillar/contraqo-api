@@ -1,0 +1,91 @@
+{
+  "content": [
+    {
+      "email": "admin@contraqo.com",
+      "firstName": "Contraqo",
+      "lastName": "Admin",
+      "phone": "+1-555-ADMIN",
+      "emailVerified": true,
+      "isSubscribed": true,
+      "isActive": true,
+      "password": "ContraqoAdmin2024!",
+      "trialEndsAt": "2026-09-15T00:00:00.000Z",
+      "description": "Super admin for Contraqo platform management",
+      "role": "admin"
+    },
+    {
+      "email": "john.contractor@example.com",
+      "firstName": "John",
+      "lastName": "Smith",
+      "phone": "+1-555-0100",
+      "emailVerified": true,
+      "isSubscribed": false,
+      "isActive": true,
+      "password": "Contractor123!",
+      "businessType": "General Contractor",
+      "trialEndsAt": "2025-10-15T00:00:00.000Z",
+      "description": "Trial user - General contractor for testing quote creation flow",
+      "role": "contractor"
+    },
+    {
+      "email": "maria.plumber@example.com",
+      "firstName": "Maria",
+      "lastName": "Garcia",
+      "phone": "+1-555-0200",
+      "emailVerified": true,
+      "isSubscribed": true,
+      "isActive": true,
+      "password": "Plumber456!",
+      "businessType": "Plumbing Services",
+      "trialEndsAt": "2025-09-08T00:00:00.000Z",
+      "description": "Subscribed user - Plumber with full access to all features",
+      "role": "plumber"
+    },
+    {
+      "email": "david.electric@example.com",
+      "firstName": "David",
+      "lastName": "Johnson",
+      "phone": "+1-555-0300",
+      "emailVerified": true,
+      "isSubscribed": false,
+      "isActive": true,
+      "password": "Electric789!",
+      "role": "electrician",
+      "businessType": "Electrical Services",
+      "description": "Trial user - Electrician for testing multiple service professionals"
+    },
+    {
+      "email": "anna.painter@example.com",
+      "firstName": "Anna",
+      "lastName": "Wilson",
+      "phone": "+1-555-0400",
+      "emailVerified": true,
+      "isSubscribed": false,
+      "isActive": true,
+      "password": "Painter321!",
+      "role": "painter",
+      "businessType": "Painting Services",
+      "description": "Expired trial user - For testing trial expiration flow and upgrade prompts"
+    },
+    {
+      "email": "test@contraqo.dev",
+      "firstName": "Test",
+      "lastName": "User",
+      "phone": "+1-555-TEST",
+      "emailVerified": false,
+      "isSubscribed": false,
+      "isActive": true,
+      "password": "TestUser123!",
+      "role": "tester",
+      "businessType": "Testing",
+      "description": "Development test user - Unverified email for testing verification flow"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "environment": "development",
+    "description": "Seed data for Contraqo users - includes various user types for comprehensive testing",
+    "lastUpdated": "2024-01-15",
+    "totalUsers": 6
+  }
+}
